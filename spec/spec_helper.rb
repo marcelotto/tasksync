@@ -1,5 +1,7 @@
 require 'bundler/setup'
-#Bundler.require(:test)
+Bundler.require(:test)
+
+require 'vcr'
 
 #SimpleCov.start if ENV['COVERAGE']
 
@@ -13,6 +15,16 @@ end
 require 'tasksync'
 
 Dir[File.join(SPEC_DIR, 'support/**/*.rb')].each {|f| require f }
+
+VCR.configure do |c|
+  c.allow_http_connections_when_no_cassette = true
+
+  c.cassette_library_dir = 'fixtures/vcr_cassettes'
+  c.hook_into :webmock # or :fakeweb
+  # https://www.relishapp.com/vcr/vcr/v/2-1-1/docs/test-frameworks/usage-with-rspec-metadata
+  c.configure_rspec_metadata!
+
+end
 
 RSpec.configure do |config|
   # https://www.relishapp.com/vcr/vcr/v/2-1-1/docs/test-frameworks/usage-with-rspec-metadata
