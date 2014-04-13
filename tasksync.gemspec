@@ -22,17 +22,19 @@ Gem::Specification.new do |spec|
   spec.add_dependency "taskmapper-pivotal", "~> 0.9.1"
   spec.add_dependency "taskmapper-github", "~> 0.12.1"
   spec.add_dependency "taskmapper-trello", "~> 0.0.1"
-  # spec.add_dependency "activemodel", "~> 4.0.3"
-  # spec.add_dependency "activesupport", "~> 4.0.3"
+  #spec.add_dependency "activemodel", "~> 4.1.0"
+  #spec.add_dependency "activesupport", "~> 4.1.0"
   spec.add_dependency "configliere", "~> 0.4.18"
 
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec", "~> 2.99.0.beta2"
+  spec.add_development_dependency "rspec-its"
   # this an old version enforcement, since current version has issue https://github.com/guard/listen/issues/149
   spec.add_development_dependency 'guard',       '= 1.8.3'
   spec.add_development_dependency 'guard-rspec', '>= 3.1.0'
   spec.add_development_dependency 'spec_coverage'
+  spec.add_development_dependency 'webmock'
   spec.add_development_dependency 'vcr'
 
 end

@@ -15,6 +15,7 @@ end
 
 group :test do
   gem 'fuubar'
+  gem 'active_model_lint-rspec'
 
   # Guard
   #gem 'guard-rspec'

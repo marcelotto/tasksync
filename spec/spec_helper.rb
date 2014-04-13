@@ -1,6 +1,7 @@
 require 'bundler/setup'
 Bundler.require(:test)
 
+require 'rspec/its'
 require 'vcr'
 
 #SimpleCov.start if ENV['COVERAGE']
